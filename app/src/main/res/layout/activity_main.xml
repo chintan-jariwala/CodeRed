@@ -21,7 +21,8 @@
         android:id="@+id/cycleInfo"
         android:textSize="40dp"
         android:textColor="#FF0000"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:layout_width="match_parent"
@@ -37,4 +38,19 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <ExpandableListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/expandableListView"
+        android:layout_below="@+id/textSubtitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp"
+        android:background="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textSubtitle"
+        android:layout_alignEnd="@+id/textSubtitle"
+        android:fastScrollAlwaysVisible="false"
+        android:fastScrollEnabled="false" />
 </RelativeLayout>
