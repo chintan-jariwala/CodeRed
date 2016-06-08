@@ -7,10 +7,314 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.samberg.codered.MainActivity">
+    tools:context="com.example.samberg.symptomspagecodered.MainActivity"
+    android:background="#050505">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Symptoms"
+        android:id="@+id/textView"
+        android:textSize="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ec0a0a" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:id="@+id/scrollView">
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Directions: Mark the symptoms that occur in the week leading up to your period or during your period. Don't forget to save your data."
+                android:id="@+id/textView2"
+                android:textSize="10dp"
+                android:textColor="#e3e3e3"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cramps"
+                android:id="@+id/checkBox"
+                android:layout_below="@+id/textView2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:textColor="#d1caca"
+                android:textSize="20dp"
+                android:clickable="true"
+                android:buttonTint="@color/abc_primary_text_material_dark" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Headache"
+                android:id="@+id/checkBox2"
+                android:checked="false"
+                android:textColor="#d3d2d2"
+                android:textSize="20dp"
+                android:clickable="true"
+                android:layout_below="@+id/checkBox"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:buttonTint="#e3e3e3" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Abdominal Bloating"
+                android:id="@+id/checkBox3"
+                android:layout_below="@+id/checkBox2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:buttonTint="#e1e1e1"
+                android:clickable="true"
+                android:textColor="#d1d1d1"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sore/tender Breasts"
+                android:id="@+id/checkBox4"
+                android:layout_below="@+id/checkBox3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:buttonTint="#cfcfcf"
+                android:textColor="#d0d0d0"
+                android:textSize="20dp"
+                android:clickable="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Irritability"
+                android:id="@+id/checkBox5"
+                android:layout_below="@+id/checkBox4"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:buttonTint="#cecece"
+                android:textColor="#d2d2d2"
+                android:textSize="20dp"
+                android:clickable="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crying"
+                android:id="@+id/checkBox6"
+                android:layout_below="@+id/checkBox5"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:clickable="true"
+                android:buttonTint="#cdcdcd"
+                android:textColor="#cdcdcd"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lower Back Pain"
+                android:id="@+id/checkBox7"
+                android:layout_below="@+id/checkBox6"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:clickable="true"
+                android:textColor="#cccbcb"
+                android:textSize="20dp"
+                android:buttonTint="#cacaca" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food Cravings"
+                android:id="@+id/checkBox8"
+                android:layout_below="@+id/checkBox7"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:buttonTint="#d2d2d2"
+                android:clickable="true"
+                android:textColor="#c5c5c5"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mood Swings"
+                android:id="@+id/checkBox9"
+                android:layout_below="@+id/checkBox8"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:buttonTint="#c6c6c6"
+                android:clickable="true"
+                android:textColor="#c0c0c0"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fatigue"
+                android:id="@+id/checkBox10"
+                android:layout_below="@+id/checkBox9"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:buttonTint="#c9c9c9"
+                android:clickable="true"
+                android:textColor="#c1c1c1"
+                android:textSize="20dp"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weight Gain"
+                android:id="@+id/checkBox11"
+                android:layout_below="@+id/checkBox10"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:buttonTint="#c6c6c6"
+                android:clickable="true"
+                android:textColor="#c1c1c1"
+                android:textSize="20dp"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Increased Food Consumption"
+                android:id="@+id/checkBox12"
+                android:layout_below="@+id/checkBox11"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:buttonTint="#bfbfbf"
+                android:clickable="true"
+                android:textColor="#c1c1c1"
+                android:textSize="20dp"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edema"
+                android:id="@+id/checkBox13"
+                android:layout_below="@+id/checkBox12"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:buttonTint="#c4c4c4"
+                android:clickable="true"
+                android:textColor="#c5c5c5"
+                android:textSize="20dp"
+                android:checked="false" />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dysmenorrhea"
+                android:id="@+id/checkBox14"
+                android:layout_below="@+id/checkBox13"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:buttonTint="#c4c4c4"
+                android:clickable="true"
+                android:textColor="#c5c5c5"
+                android:textSize="20dp"
+                android:checked="false" />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Migrane"
+                android:id="@+id/checkBox15"
+                android:layout_below="@+id/checkBox14"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:buttonTint="#c4c4c4"
+                android:clickable="true"
+                android:textColor="#c5c5c5"
+                android:textSize="20dp"
+                android:checked="false" />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Constipation"
+                android:id="@+id/checkBox16"
+                android:layout_below="@+id/checkBox15"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:buttonTint="#c4c4c4"
+                android:clickable="true"
+                android:textColor="#c5c5c5"
+                android:textSize="20dp"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diarrhea"
+                android:id="@+id/checkBox17"
+                android:layout_below="@+id/checkBox16"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:buttonTint="#c4c4c4"
+                android:clickable="true"
+                android:textColor="#c5c5c5"
+                android:textSize="20dp"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other"
+                android:id="@+id/checkBox18"
+                android:layout_below="@+id/checkBox17"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:buttonTint="#c4c4c4"
+                android:clickable="true"
+                android:textColor="#c5c5c5"
+                android:textSize="20dp"
+                android:checked="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/checkBox18"
+                android:layout_alignParentStart="true"
+                android:text="SAVE"
+                android:textSize="40dp"
+                android:textColor="#ec0a0a"
+                />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
 </RelativeLayout>
