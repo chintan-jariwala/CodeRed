@@ -37,20 +37,111 @@
         android:layout_alignParentTop="false"
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:contextClickable="true"
+        android:clickable="true" />
 
-    <ExpandableListView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/expandableListView"
+        android:id="@+id/startText"
         android:layout_below="@+id/textSubtitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="31dp"
-        android:background="#FFFFFF"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="33dp"
+        android:background="#000000"
+        android:text="Start Date"
         android:layout_alignRight="@+id/textSubtitle"
         android:layout_alignEnd="@+id/textSubtitle"
-        android:fastScrollAlwaysVisible="false"
-        android:fastScrollEnabled="false" />
+        android:textColor="#FF0000" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/endText"
+        android:layout_below="@+id/startText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="100dp"
+        android:layout_alignRight="@+id/startText"
+        android:layout_alignEnd="@+id/startText"
+        android:text="End Date"
+        android:background="#000000"
+        android:textColor="#FF0000" />
+
+    <Spinner
+        android:id="@+id/startMonthSpinner"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:layout_marginTop="140dp"
+        android:clickable="true" />
+
+    <Spinner
+        android:id="@+id/startDaySpinner"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:clickable="true"
+        android:layout_alignTop="@+id/startMonthSpinner"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:id="@+id/startYearSpinner"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:clickable="true"
+        android:layout_alignTop="@+id/startDaySpinner"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Spinner
+        android:id="@+id/endMonthSpinner"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:clickable="true"
+        android:layout_below="@+id/endText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:id="@+id/endDaySpinner"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:clickable="true"
+        android:layout_below="@+id/endText"
+        android:layout_alignLeft="@+id/startDaySpinner"
+        android:layout_alignStart="@+id/startDaySpinner" />
+
+    <Spinner
+        android:id="@+id/endYearSpinner"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:clickable="true"
+        android:layout_below="@+id/endText"
+        android:layout_alignRight="@+id/endText"
+        android:layout_alignEnd="@+id/endText" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:text="Save"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:layout_alignRight="@+id/endDaySpinner"
+        android:layout_alignEnd="@+id/endDaySpinner"
+        android:background="#FF0000" />
+
+
 </RelativeLayout>
