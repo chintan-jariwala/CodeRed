@@ -3,85 +3,52 @@ package com.example.cidseuser.cycleinfo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.borax12.materialdaterangepicker.date.DatePickerDialog;
 
+import java.util.Calendar;
 
+public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+
+    Button btnStart;
+    String startdate,enddate;
+    TextView tvSetDate, tvEndDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnStart = (Button) findViewById(R.id.btnstart);
+        tvSetDate = (TextView) findViewById(R.id.tvSetDate);
+        tvEndDate = (TextView) findViewById(R.id.tvEndDate);
 
-        String[] arraySpinner = new String[] {
-                "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
-        };
-        Spinner s = (Spinner) findViewById(R.id.startMonthSpinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, arraySpinner);
-        s.setAdapter(adapter);
-
-        String[] arraySpinner1 = new String[] {
-                "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
-        };
-        Spinner s1 = (Spinner)findViewById(R.id.endMonthSpinner);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, arraySpinner);
-        s.setAdapter(adapter1);
-
-
-
-        String[] arraySpinner2 = new String[] {
-                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"
-        };
-        Spinner s2 = (Spinner) findViewById(R.id.startDaySpinner);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, arraySpinner);
-        s.setAdapter(adapter2);
-
-
-        String[] arraySpinner3 = new String[] {
-                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"
-        };
-        Spinner s3 = (Spinner) findViewById(R.id.endDaySpinner);
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, arraySpinner);
-        s.setAdapter(adapter3);
-
-
-        String[] arraySpinner4 = new String[] {
-                "2016", "2017", "2018", "2019", "2020"
-        };
-        Spinner s4 = (Spinner) findViewById(R.id.endYearSpinner);
-        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, arraySpinner);
-        s.setAdapter(adapter4);
-
-        String[] arraySpinner5 = new String[] {
-                "2016", "2017", "2018", "2019", "2020"
-        };
-        Spinner s5 = (Spinner) findViewById(R.id.endYearSpinner);
-        ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, arraySpinner);
-        s.setAdapter(adapter5);
-    }
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar now = Calendar.getInstance();
+                DatePickerDialog dpd = DatePickerDialog.newInstance(
+                        MainActivity.this,
+                        now.get(Calendar.YEAR),
+                        now.get(Calendar.MONTH),
+                        now.get(Calendar.DAY_OF_MONTH)
+                );
+                dpd.show(getFragmentManager(), "Datepickerdialog");
+            }
+        });
     }
 
+    @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth, int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
+        startdate = "Your Start Date: "+(monthOfYear+1)+"/"+dayOfMonth+"/"+year;
+        tvSetDate.setText(startdate);
+        enddate = "Your End Date: "+(monthOfYearEnd+1)+"/"+dayOfMonthEnd+"/"+yearEnd;
+        tvEndDate.setText(enddate);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
+}

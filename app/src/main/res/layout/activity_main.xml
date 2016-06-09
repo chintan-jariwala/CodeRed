@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.cidseuser.cycleinfo.MainActivity"
+    tools:context=".MainActivity"
     android:background="#000000">
 
     <TextView
@@ -41,107 +41,51 @@
         android:contextClickable="true"
         android:clickable="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/startText"
-        android:layout_below="@+id/textSubtitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp"
-        android:background="#000000"
-        android:text="Start Date"
-        android:layout_alignRight="@+id/textSubtitle"
-        android:layout_alignEnd="@+id/textSubtitle"
-        android:textColor="#FF0000" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/endText"
-        android:layout_below="@+id/startText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="100dp"
-        android:layout_alignRight="@+id/startText"
-        android:layout_alignEnd="@+id/startText"
-        android:text="End Date"
-        android:background="#000000"
-        android:textColor="#FF0000" />
-
-    <Spinner
-        android:id="@+id/startMonthSpinner"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:layout_marginTop="140dp"
-        android:clickable="true" />
-
-    <Spinner
-        android:id="@+id/startDaySpinner"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:clickable="true"
-        android:layout_alignTop="@+id/startMonthSpinner"
-        android:layout_centerHorizontal="true" />
-
-    <Spinner
-        android:id="@+id/startYearSpinner"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:clickable="true"
-        android:layout_alignTop="@+id/startDaySpinner"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Spinner
-        android:id="@+id/endMonthSpinner"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:clickable="true"
-        android:layout_below="@+id/endText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Spinner
-        android:id="@+id/endDaySpinner"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:clickable="true"
-        android:layout_below="@+id/endText"
-        android:layout_alignLeft="@+id/startDaySpinner"
-        android:layout_alignStart="@+id/startDaySpinner" />
-
-    <Spinner
-        android:id="@+id/endYearSpinner"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        android:clickable="true"
-        android:layout_below="@+id/endText"
-        android:layout_alignRight="@+id/endText"
-        android:layout_alignEnd="@+id/endText" />
 
     <Button
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="75dp"
-        android:text="Save"
+        android:text="Add Symptoms and Save"
         android:id="@+id/button"
+        android:background="#FF0000"
+        android:textColor="#000000"
+        android:textSize="17dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="60dp"
-        android:layout_alignRight="@+id/endDaySpinner"
-        android:layout_alignEnd="@+id/endDaySpinner"
-        android:background="#FF0000" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp" />
+
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:text="Click to Choose Start and End Dates"
+        android:id="@+id/btnstart"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/textSubtitle"
+        android:layout_centerHorizontal="true"
+        android:background="#FFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/tvSetDate"
+        android:layout_below="@+id/btnstart"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="30dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/tvEndDate"
+        android:layout_below="@+id/tvSetDate"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="30dp" />
 
 
 </RelativeLayout>
+
