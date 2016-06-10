@@ -1,6 +1,7 @@
 package com.example.cidseuser.cycleinfo;
 
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.borax12.materialdaterangepicker.date.DatePickerDialog;
 
@@ -50,5 +52,28 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         enddate = "Your End Date: "+(monthOfYearEnd+1)+"/"+dayOfMonthEnd+"/"+yearEnd;
         tvEndDate.setText(enddate);
 
+        String date = monthOfYear + "/" + dayOfMonth + "/" + year;
+
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+
+        int count = sharedPref.getInt("count", 0);
+
+        String startDateKey = "cycle_" + "_start_date_";
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(startDateKey, date);
+        editor.commit();
     }
+
+    SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+
+    int count = sharedPref.getInt("count", 0);
+
+    String endDateKey = "cycle_" + "_end_date_";
+    SharedPreferences.Editor editor = sharedPref.edit();
+    editor.putString(endDateKey, date);
+    editor.commit();
 }
+}
+
+
+
