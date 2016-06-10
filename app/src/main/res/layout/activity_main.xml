@@ -46,13 +46,15 @@
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:text="Add Symptoms and Save"
-        android:id="@+id/button"
+        android:id="@+id/saveButton"
         android:background="#FF0000"
         android:textColor="#000000"
         android:textSize="17dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="70dp"
+        android:clickable="false"
+        android:onClick="go to symtpoms page" />
 
     <Button
         android:layout_width="160dp"
@@ -85,6 +87,7 @@
         android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
         android:layout_marginTop="30dp" />
+
 
 
 </RelativeLayout>
