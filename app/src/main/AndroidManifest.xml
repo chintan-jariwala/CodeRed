@@ -31,7 +31,8 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.example" />
 
-        <activity android:name=".CycleDetails"></activity>
+        <activity android:name=".CycleDetails" />
+        <activity android:name=".CardViewTest"></activity>
     </application>
 
 </manifest>
