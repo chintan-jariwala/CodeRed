@@ -2,6 +2,7 @@ package com.example.cidseuser.cycleinfo;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     String startdate,enddate;
     TextView tvSetDate, tvEndDate;
 
+    private Button saveButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         btnStart = (Button) findViewById(R.id.btnstart);
         tvSetDate = (TextView) findViewById(R.id.tvSetDate);
         tvEndDate = (TextView) findViewById(R.id.tvEndDate);
+        saveButton = (Button) findViewById(R.id.saveButton);
 
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +47,15 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 dpd.show(getFragmentManager(), "Datepickerdialog");
             }
         });
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Time Pass",Toast.LENGTH_LONG).show();
+            }
+        });
     }
+
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth, int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
@@ -60,17 +72,10 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
         String startDateKey = "cycle_" + "_start_date_";
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(startDateKey, date);
+        editor.putString(startDateKey, startdate);
         editor.commit();
-    }
-
-    SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-
-    int count = sharedPref.getInt("count", 0);
-
-    String endDateKey = "cycle_" + "_end_date_";
-    SharedPreferences.Editor editor = sharedPref.edit();
-    editor.putString(endDateKey, date);
+        String endDateKey = "cycle_" + "_end_date_";
+    editor.putString(endDateKey, enddate);
     editor.commit();
 }
 }
