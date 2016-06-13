@@ -35,8 +35,6 @@ public class SymptomsDateActivity extends AppCompatActivity {
         setContentView(R.layout.symptoms_front_page);
 
 
-        SugarContext.init(getApplicationContext());
-        Details.findById(Details.class,1);
         startDate = "6/12/2016";
 
         endDate = "6/12/2016";
@@ -55,7 +53,8 @@ public class SymptomsDateActivity extends AppCompatActivity {
 
                 details.save();
                 Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_LONG).show();
-                Log.e("Date",date);
+                Intent intent1 = new Intent(getApplicationContext(),CycleDetails.class);
+                startActivity(intent1);
             }
 
         });

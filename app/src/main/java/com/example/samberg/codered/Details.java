@@ -1,10 +1,9 @@
 package com.example.samberg.codered;
 
 import com.orm.SugarRecord;
+import com.orm.dsl.Table;
 
-/**
- * Created by samberg on 6/13/2016.
- */
+@Table
 public class Details extends SugarRecord {
     String startDate;
     String endDate;
