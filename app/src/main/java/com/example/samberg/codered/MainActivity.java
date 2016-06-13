@@ -1,5 +1,6 @@
 package com.example.samberg.codered;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -120,12 +121,105 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        cbLowerBackPain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cbLowerBackPain.isChecked()){
+                    finalResult.append(" Lower Back Pain");
+                }
+            }
+        });
+
+        cbFoodCravings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cbFoodCravings.isChecked()){
+                    finalResult.append(" Food Cravings");
+                }
+            }
+        });
+        cbMoodSwings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cbMoodSwings.isChecked()){
+                    finalResult.append(" Mood Swings");
+                }
+            }
+        });
+        cbFatigue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cbFatigue.isChecked()){
+                    finalResult.append(" Fatigue");
+                }
+            }
+        });
+        cbWeightGain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cbWeightGain.isChecked()){
+                    finalResult.append(" Weight Gain");
+                }
+            }
+        });
+        cbIncreasedFoodConsumption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cbIncreasedFoodConsumption.isChecked()){
+                    finalResult.append(" Increased Food Consumption");
+                }
+            }
+        });
+        cbEdema.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cbEdema.isChecked()){
+                    finalResult.append(" Edema");
+                }
+            }
+        });
+        cbDysmenorrhea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cbDysmenorrhea.isChecked()){
+                    finalResult.append(" Dysmenorrhea");
+                }
+            }
+        });
+        cbMigrane.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cbMigrane.isChecked()){
+                    finalResult.append(" Migrane");
+                }
+            }
+        });
+        cbConstipation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cbConstipation.isChecked()){
+                    finalResult.append(" Constipation");
+                }
+            }
+        });
+        cbDiarrhea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cbDiarrhea.isChecked()){
+                    finalResult.append(" Diarrhea");
+                }
+            }
+        });
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finalResult.append(etOther.getText().toString());
                 Toast.makeText(getApplicationContext(),finalResult.toString(),Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(getApplicationContext(),SymptomsDateActivity.class);
+                intent.putExtra("Symptom",finalResult.toString());
+                startActivity(intent);
             }
 
         });

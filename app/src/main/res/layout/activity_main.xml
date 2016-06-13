@@ -303,7 +303,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/etOther"
                 android:layout_alignParentBottom="true"
-                android:text="SAVE"
+                android:text="NEXT"
                 android:textSize="25dp"
                 android:textColor="#030303"
                 android:backgroundTint="#d80b0b"
