@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.opengl.GLSurfaceView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.EventLogTags;
+import android.util.Log;
 import android.widget.LinearLayout;
 
 import org.achartengine.ChartFactory;
@@ -16,13 +18,38 @@ import org.achartengine.model.XYSeries;
 import org.achartengine.model.XYValueSeries;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String Tag = "MainActivity";
+
+   ArrayList <String> names;
+
+    List<Integer> testList=new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        testList.add(14);
+        testList.add(20);
+        testList.add(17);
+        testList.add(10);
+        testList.add(25);
+        testList.add(55);
+        Collections.sort(testList);
+
+        Log.d(Tag, "OnCreate:" + testList +" Size " + testList.size() + "Median " + testList.get(testList.size()/2) );
+        int median = testList.size()/2;
+
+        int firstHalfMedian = median/2;
+        int secondHalfMedian = (median + testList.size())/2;
 
         XYSeries series = new XYSeries("Cycle Lengths");
         XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
@@ -34,12 +61,18 @@ public class MainActivity extends AppCompatActivity {
         XYSeries series1 = new XYSeries("Days Between Start Days");
         XYSeries series2 = new XYSeries("Cycle Length");
 
-        series1.add(10,14);
-        series2.add(20,6);
-        series1.add(40,20);
-        series2.add(50,10);
-        series1.add(70,17);
-        series2.add(80,8);
+        series1.add(31,14);
+        series2.add(36,6);
+        series1.add(120,20);
+        series2.add(130,10);
+        series1.add(214,17);
+        series2.add(224,8);
+        series1.add(308,10);
+        series2.add(318,30);
+        series1.add(400,25);
+        series2.add(410,45);
+        series1.add(494,55);
+        series2.add(504,15);
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
         dataSet.addSeries(series1);
         dataSet.addSeries(series2);
@@ -71,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         renderer2.setDisplayChartValues(true);
         renderer2.setChartValuesSpacing(2);
 
-        renderer2.setLineWidth(10);
+        renderer2.setLineWidth(5);
 
         XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
         mRenderer.addSeriesRenderer(renderer);
@@ -93,14 +126,14 @@ public class MainActivity extends AppCompatActivity {
         mRenderer.setPanEnabled(false, false);
         mRenderer.setYAxisMax(100);
         mRenderer.setYAxisMin(0);
-        mRenderer.setXAxisMax(90);
+        mRenderer.setXAxisMax(550);
         mRenderer.setXAxisMin(0);
         mRenderer.setXTitle("CYCLES");
         mRenderer.setYTitle("Days");
         mRenderer.setAxisTitleTextSize(20);
         mRenderer.setShowGrid(true); // we show the grid
         mRenderer.setBarSpacing(2);
-        mRenderer.setBarWidth(50);
+        mRenderer.setBarWidth(40);
         mRenderer.setApplyBackgroundColor(true);
         mRenderer.setBackgroundColor(Color.BLACK);
         mRenderer.setLegendTextSize(15);
