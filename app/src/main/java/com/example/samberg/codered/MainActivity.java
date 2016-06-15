@@ -220,6 +220,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),SymptomsDateActivity.class);
                 intent.putExtra("Symptom",finalResult.toString());
                 startActivity(intent);
+                finish();
             }
 
         });

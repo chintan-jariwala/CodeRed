@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".HomeScreeen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +32,11 @@
             android:value="com.example" />
 
         <activity android:name=".CycleDetails" />
-        <activity android:name=".CardViewTest"></activity>
+        <activity android:name=".CardViewTest" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".CycleInfo" />
+        <activity android:name=".Graph" />
+        <activity android:name=".Notifications"></activity>
     </application>
 
 </manifest>

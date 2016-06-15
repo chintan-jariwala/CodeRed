@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/cardItem"
-    >
+    android:background="#030303">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:background="#ffffff">
+        android:background="#030303">
 
         <TextView
             android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
             android:id="@+id/tvCardViewId"
             android:textSize="30sp"
             android:gravity="center"
-            android:text="Cycle Id"
+            android:text="Cycle 1"
             android:textColor="#ff0000"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
@@ -40,7 +40,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Start Date:"
             android:id="@+id/textView6"
-            android:layout_centerVertical="true"
+            android:textColor="#c1c1c1"
+            android:layout_alignTop="@+id/textView7"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -50,19 +51,19 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:id="@+id/tvStartDate"
-            android:layout_marginLeft="27dp"
-            android:layout_marginStart="27dp"
             android:layout_below="@+id/tvCardViewId"
             android:layout_alignLeft="@+id/tvCardViewId"
-            android:layout_alignStart="@+id/tvCardViewId" />
+            android:layout_alignStart="@+id/tvCardViewId"
+            android:textColor="#c3c3c3" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="End Date:"
+            android:text="@string/end_date"
             android:id="@+id/textView8"
-            android:layout_below="@+id/textView7"
+            android:textColor="#b8b8b8"
+            android:layout_below="@+id/tvStartDate"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -72,9 +73,10 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:id="@+id/tvEndDate"
-            android:layout_alignTop="@+id/textView8"
-            android:layout_alignRight="@+id/tvStartDate"
-            android:layout_alignEnd="@+id/tvStartDate" />
+            android:layout_above="@+id/symptoms"
+            android:layout_alignLeft="@+id/tvStartDate"
+            android:layout_alignStart="@+id/tvStartDate"
+            android:textColor="#bdbdbd" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,7 +85,9 @@
             android:text="Symptoms : "
             android:id="@+id/symptoms"
             android:layout_below="@+id/textView8"
-            />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#bbbbbb" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -91,9 +95,10 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:id="@+id/tvSymptoms"
-            android:layout_below="@+id/tvEndDate"
-            android:layout_alignLeft="@+id/tvEndDate"
-            android:layout_alignStart="@+id/tvEndDate" />
+            android:layout_alignTop="@+id/symptoms"
+            android:layout_alignLeft="@+id/tvStartDate"
+            android:layout_alignStart="@+id/tvStartDate"
+            android:textColor="#b9b9b9" />
 
     </RelativeLayout>
 
