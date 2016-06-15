@@ -26,6 +26,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private static final String Tag = "MainActivity";
+    int sum = 0;
+    int Average = 0;
+    int i = 0;
 
    ArrayList <String> names;
 
@@ -36,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         testList.add(14);
         testList.add(20);
         testList.add(17);
@@ -46,10 +48,35 @@ public class MainActivity extends AppCompatActivity {
         Collections.sort(testList);
 
         Log.d(Tag, "OnCreate:" + testList +" Size " + testList.size() + "Median " + testList.get(testList.size()/2) );
-        int median = testList.size()/2;
+        int median = testList.size() / 2;			// get median index
+        int medianElement = 0;								// make variable to store median element
 
+        if (testList.size() % 2 == 0) {				// testList has even number of elements
+            medianElement = testList.get(median) + testList.get(median + 1);
+            medianElement = medianElement / 2;	// calculate median for even list
+        } else {															// testlist has odd number of elements
+            medianElement = testList.get(median);
+        }
+
+// do something with medianElement		// medianElement now contains median of testList
+        medianElement = testList.size()/2;
         int firstHalfMedian = median/2;
         int secondHalfMedian = (median + testList.size())/2;
+
+        for (int i = firstHalfMedian - 1; i >= 0; i--) {
+            testList.remove(i);
+        }
+        for (int i = testList.size() - 1; i >= secondHalfMedian; i--) {
+            testList.remove(i);
+        }
+        for(int i = 0; i <=3; i++) {
+            sum = sum+testList.get(i);
+        }
+        int endValue = testList.get(testList.size() -1 );
+        int firstValue = testList.get(0);
+
+        Average = sum / testList.size();
+        Log.d(Tag, "OnCreate:" + testList +"Size" + testList.size() + "Average" + Average);
 
         XYSeries series = new XYSeries("Cycle Lengths");
         XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
@@ -60,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
         XYSeries series1 = new XYSeries("Days Between Start Days");
         XYSeries series2 = new XYSeries("Cycle Length");
+        XYSeries series3 = new XYSeries("Prediction");
 
         series1.add(31,14);
         series2.add(36,6);
@@ -73,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         series2.add(410,45);
         series1.add(494,55);
         series2.add(504,15);
+        series3.add(588,19);
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
         dataSet.addSeries(series1);
         dataSet.addSeries(series2);
@@ -106,9 +135,20 @@ public class MainActivity extends AppCompatActivity {
 
         renderer2.setLineWidth(5);
 
+
+
+        XYSeriesRenderer renderer3 = new XYSeriesRenderer();
+        renderer3.setColor(Color.rgb(204,0,204));
+
+        renderer3.setDisplayChartValues(true);
+        renderer3.setChartValuesSpacing(2);
+
+        renderer3.setLineWidth(5);
+
         XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
         mRenderer.addSeriesRenderer(renderer);
         mRenderer.addSeriesRenderer(renderer2);
+        mRenderer.addSeriesRenderer(renderer3);
 
 
 //
@@ -126,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
         mRenderer.setPanEnabled(false, false);
         mRenderer.setYAxisMax(100);
         mRenderer.setYAxisMin(0);
-        mRenderer.setXAxisMax(550);
+        mRenderer.setXAxisMax(600);
         mRenderer.setXAxisMin(0);
         mRenderer.setXTitle("CYCLES");
         mRenderer.setYTitle("Days");
