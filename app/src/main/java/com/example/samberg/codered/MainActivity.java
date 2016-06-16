@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = testList.size() - 1; i >= secondHalfMedian; i--) {
             testList.remove(i);
         }
-        for(int i = 0; i <=3; i++) {
+        for(int i = 0; i <=testList.size()-1; i++) {
             sum = sum+testList.get(i);
         }
         int endValue = testList.get(testList.size() -1 );
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
         dataSet.addSeries(series1);
         dataSet.addSeries(series2);
-
+        dataSet.addSeries(series3);
 //
 //        int x=80, y=40;
 //
